@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+/*
+Pointers variables are strongly typed. It means that you need a particular pointer type
+to store the address of that particular type.
+
+Why strong types?
+We do not use the pointer variables to only store memory addresses. We also use them to dereference these
+addresses so that we can access and modify the values in these addresses.
+*/
+
+int main(void) {
+
+    int num = 1025;
+    int *pInt = &num;
+
+    printf("size of integer is %d\n", sizeof(int));
+    printf("Address of num is %p and the value is %d\n", pInt, *pInt);
+    printf("Address of num is %p and the value is %d\n", pInt+1, *(pInt+1));
+
+    char *pChar;
+    pChar = (char *)pInt; //typecasting
+
+    printf("size of char is %d\n", sizeof(char));
+    printf("Address of pChar is %p and the value is %d\n", pChar, *pChar);
+    // 1025 = 00000000 00000000 00000100 00000001
+    printf("Address of pChar+1 is %p and the value is %d\n", pChar+1, *(pChar+1));
+
+    // void pointer -> generic pointer
+    void *pVoid;
+    pVoid = pInt;
+    // Statement below is problematic because it is not mapped to a particular type.
+    // So, we cannot dereference it. We can only print its address.
+    // printf("Address of pVoid is %p and the value is %d\n", pVoid, *pVoid);
+
+
+    return 0;
+}
+
