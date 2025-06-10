@@ -46,9 +46,10 @@ void Play(int bet) {
 int main(void) {
 
     int bet;
-    printf("What is your bet?");
-    scanf("%d", &bet);
+    
     while (cash > 0) {
+        printf("What is your bet?");
+        scanf("%d", &bet);
         Play(bet);
         puts("");
     }
