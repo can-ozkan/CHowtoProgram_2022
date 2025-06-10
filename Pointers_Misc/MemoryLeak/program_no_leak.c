@@ -48,12 +48,11 @@ int main(void) {
     int bet;
     printf("What is your bet?");
     scanf("%d", &bet);
-    while (bet > cash || bet == 0) {
-        break;
+    while (cash > 0) {
+        Play(bet);
+        puts("");
     }
-    Play(bet);
-    puts("");
-
+    
     return 0;
 }
 
